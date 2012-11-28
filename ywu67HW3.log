@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.11.1)  28 NOV 2012 05:42
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.11.1)  28 NOV 2012 05:45
 entering extended mode
 **ywu67HW3.tex
 ("G:\JHU course file\Math Modeling\ywu67HW3.git\ywu67HW3.tex"
@@ -810,14 +810,14 @@ LaTeX Font Info:    Font shape `TS1/aett/m/n' in size <10> not available
 5]
 
 LaTeX Warning: Citation `tikzManual2012-11-04' on page 6 undefined on input lin
-e 351.
+e 363.
 
 
 LaTeX Warning: Citation `tikzManual2012-11-04' on page 6 undefined on input lin
-e 364.
+e 376.
 
 
-Overfull \hbox (1.26048pt too wide) in paragraph at lines 378--380
+Overfull \hbox (1.26048pt too wide) in paragraph at lines 390--392
 [][]\T1/aett/m/n/12 [COMMIT] \T1/aer/m/n/12 load the data ([]\T1/aett/m/n/12 re
 quire(MVA);data(gardenflowers)\T1/aer/m/n/12 ) and com-pute us-ing R/Sweave 
  []
@@ -830,12 +830,12 @@ quire(MVA);data(gardenflowers)\T1/aer/m/n/12 ) and com-pute us-ing R/Sweave
 LaTeX Warning: Empty `thebibliography' environment on input line 3.
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 388.
- [6]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 388.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 400.
+ [6] [7]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 400.
  ("G:\JHU course file\Math Modeling\ywu67HW3.git\ywu67HW3.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 388.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 388.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 400.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 400.
 Package rerunfilecheck Info: File `ywu67HW3.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package rerunfilecheck Info: File `ywu67HW3.brf' has not changed.
@@ -847,12 +847,12 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 388.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 400.
  ) 
 Here is how much of TeX's memory you used:
- 17511 strings out of 494045
- 298087 string characters out of 3148396
- 406925 words of memory out of 3000000
+ 17512 strings out of 494045
+ 298093 string characters out of 3148396
+ 407925 words of memory out of 3000000
  20354 multiletter control sequences out of 15000+200000
  33234 words of font info for 90 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
@@ -869,9 +869,9 @@ s/type1/public/amsfonts/cm/cmsltt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
 1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
 /amsfonts/cm/cmtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfont
 s/cm/cmtt12.pfb>
-Output written on ywu67HW3.pdf (6 pages, 165034 bytes).
+Output written on ywu67HW3.pdf (7 pages, 165847 bytes).
 PDF statistics:
- 186 PDF objects out of 1000 (max. 8388607)
- 82 named destinations out of 1000 (max. 500000)
+ 192 PDF objects out of 1000 (max. 8388607)
+ 83 named destinations out of 1000 (max. 500000)
  22 words of extra memory for PDF output out of 10000 (max. 10000000)
 

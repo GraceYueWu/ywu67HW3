@@ -249,6 +249,10 @@ print(D)
     \item \verb+[COMMIT]+ make sure to explain your computation, e.g., compare the two
         computations
 \end{itemize}
+<<echo=true,result=verbatim,fig=false>>=
+dist(A)
+@
+
 \paragraph{Ex 7.30}
 Omit (c), (d) and (e). 
 The necessary data is saved in \verb+matlabclown.RData+ 
