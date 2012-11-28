@@ -220,19 +220,46 @@ The determinant is 2 or equivalently 2.
 \begin{lstlisting}
 \begin{Schunk}
 \begin{Sinput}
-> #Your R codes go here
+> AT<-t(A)
+> B<-A%*%AT
+> c<-diag(B)
+> One<-matrix(c(1,1,1,1),byrow=T)
+> D2<-c%*%t(One)+One%*%c-2*B
+> D<-sqrt(D2)
+> print(D)
 \end{Sinput}
+\begin{Soutput}
+         [,1]     [,2]     [,3]     [,4]
+[1,] 0.000000 1.732051 3.464102 5.196152
+[2,] 1.732051 0.000000 1.732051 3.464102
+[3,] 3.464102 1.732051 0.000000 1.732051
+[4,] 5.196152 3.464102 1.732051 0.000000
+\end{Soutput}
 \end{Schunk}
 \end{lstlisting}
+
+
+
     \item \verb+[COMMIT]+ use R/Sweave for computation, and this time, do use the built-in \verb+dist+
         function for comparison
-\begin{lstlisting}
 \begin{Schunk}
 \begin{Sinput}
-> #Your R codes go here
+> AT<-t(A)
+> B<-A%*%AT
+> c<-diag(B)
+> One<-matrix(c(1,1,1,1),byrow=T)
+> D2<-c%*%t(One)+One%*%c-2*B
+> D<-sqrt(D2)
+> print(D)
 \end{Sinput}
+\begin{Soutput}
+         [,1]     [,2]     [,3]     [,4]
+[1,] 0.000000 1.732051 3.464102 5.196152
+[2,] 1.732051 0.000000 1.732051 3.464102
+[3,] 3.464102 1.732051 0.000000 1.732051
+[4,] 5.196152 3.464102 1.732051 0.000000
+\end{Soutput}
 \end{Schunk}
-\end{lstlisting}
     \item \verb+[COMMIT]+ make sure to explain your computation, e.g., compare the two
         computations
 \end{itemize}
