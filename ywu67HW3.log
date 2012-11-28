@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.11.1)  28 NOV 2012 05:45
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.11.1)  28 NOV 2012 18:44
 entering extended mode
 **ywu67HW3.tex
 ("G:\JHU course file\Math Modeling\ywu67HW3.git\ywu67HW3.tex"
@@ -777,47 +777,69 @@ LaTeX Font Warning: Font shape `T1/aett/bx/n' undefined
 [1
 
 {C:/Users/wx/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-<ywu67HW3-002.pdf, id=22, 433.62pt x 433.62pt>
-File: ywu67HW3-002.pdf Graphic file (type pdf)
- <use ywu67HW3-002.pdf>
-Package pdftex.def Info: ywu67HW3-002.pdf used on input line 129.
-(pdftex.def)             Requested size: 404.71353pt x 404.7313pt.
-LaTeX Font Info:    Try loading font information for U+msa on input line 132.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
-File: umsa.fd 2009/06/22 v3.00 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 132.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
-File: umsb.fd 2009/06/22 v3.00 AMS symbols B
-)
-LaTeX Font Info:    Try loading font information for TS1+aett on input line 140
+LaTeX Font Info:    Try loading font information for TS1+aett on input line 139
 .
 
 (E:/R/R-214~1.1/share/texmf/tex/latex\ts1aett.fd
 File: ts1aett.fd 
 )
-LaTeX Font Info:    Try loading font information for TS1+cmtt on input line 140
+LaTeX Font Info:    Try loading font information for TS1+cmtt on input line 139
 .
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmtt.fd"
 File: ts1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `TS1/aett/m/n' in size <10> not available
-(Font)              Font shape `TS1/cmtt/m/n' tried instead on input line 140.
- [2 <G:/JHU course file/Math Modeling/ywu67HW3.git/ywu67HW3-002.pdf>] [3] [4] [
-5]
+(Font)              Font shape `TS1/cmtt/m/n' tried instead on input line 139.
 
-LaTeX Warning: Citation `tikzManual2012-11-04' on page 6 undefined on input lin
-e 363.
+<ywu67HW3-001.pdf, id=22, 433.62pt x 433.62pt>
+File: ywu67HW3-001.pdf Graphic file (type pdf)
+ <use ywu67HW3-001.pdf>
+Package pdftex.def Info: ywu67HW3-001.pdf used on input line 144.
+(pdftex.def)             Requested size: 404.71353pt x 404.7313pt.
+ [2]
+LaTeX Font Info:    Try loading font information for U+msa on input line 147.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 147.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+) [3 <G:/JHU course file/Math Modeling/ywu67HW3.git/ywu67HW3-001.pdf>] [4] [5]
+LaTeX Font Info:    Font shape `TS1/aett/m/sl' in size <12> not available
+(Font)              Font shape `TS1/cmtt/m/sl' tried instead on input line 348.
 
 
-LaTeX Warning: Citation `tikzManual2012-11-04' on page 6 undefined on input lin
-e 376.
+<ywu67HW3-009.pdf, id=97, 361.35pt x 361.35pt>
+File: ywu67HW3-009.pdf Graphic file (type pdf)
+ <use ywu67HW3-009.pdf>
+Package pdftex.def Info: ywu67HW3-009.pdf used on input line 360.
+(pdftex.def)             Requested size: 404.71353pt x 404.71475pt.
+
+Overfull \hbox (20.0595pt too wide) in paragraph at lines 360--363
+[] \T1/aer/m/n/12 Test of small 
+ []
+
+[6] <ywu67HW3-010.pdf, id=131, 361.35pt x 361.35pt>
+File: ywu67HW3-010.pdf Graphic file (type pdf)
+ <use ywu67HW3-010.pdf>
+Package pdftex.def Info: ywu67HW3-010.pdf used on input line 380.
+(pdftex.def)             Requested size: 404.71353pt x 404.71475pt.
+
+[7 <G:/JHU course file/Math Modeling/ywu67HW3.git/ywu67HW3-009.pdf>] [8 <G:/JHU
+ course file/Math Modeling/ywu67HW3.git/ywu67HW3-010.pdf>]
+
+LaTeX Warning: Citation `tikzManual2012-11-04' on page 9 undefined on input lin
+e 423.
 
 
-Overfull \hbox (1.26048pt too wide) in paragraph at lines 390--392
+LaTeX Warning: Citation `tikzManual2012-11-04' on page 9 undefined on input lin
+e 436.
+
+[9]
+Overfull \hbox (1.26048pt too wide) in paragraph at lines 463--466
 [][]\T1/aett/m/n/12 [COMMIT] \T1/aer/m/n/12 load the data ([]\T1/aett/m/n/12 re
 quire(MVA);data(gardenflowers)\T1/aer/m/n/12 ) and com-pute us-ing R/Sweave 
  []
@@ -830,16 +852,16 @@ quire(MVA);data(gardenflowers)\T1/aer/m/n/12 ) and com-pute us-ing R/Sweave
 LaTeX Warning: Empty `thebibliography' environment on input line 3.
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 400.
- [6] [7]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 400.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 504.
+ [10]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 504.
  ("G:\JHU course file\Math Modeling\ywu67HW3.git\ywu67HW3.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 400.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 400.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 504.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 504.
 Package rerunfilecheck Info: File `ywu67HW3.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package rerunfilecheck Info: File `ywu67HW3.brf' has not changed.
-(rerunfilecheck)             Checksum: 6B85276C2707639D7490EA2C1554C690;114.
+(rerunfilecheck)             Checksum: 9C4BD8566FB59C5C6617B3D36F44CB40;114.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -847,31 +869,32 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 400.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 504.
  ) 
 Here is how much of TeX's memory you used:
- 17512 strings out of 494045
- 298093 string characters out of 3148396
- 407925 words of memory out of 3000000
- 20354 multiletter control sequences out of 15000+200000
- 33234 words of font info for 90 fonts, out of 3000000 for 9000
+ 17577 strings out of 494045
+ 298980 string characters out of 3148396
+ 416926 words of memory out of 3000000
+ 20379 multiletter control sequences out of 15000+200000
+ 33532 words of font info for 91 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 56i,8n,55p,414b,1809s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\wx\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\tct
-t1000.pk> <C:\Users\wx\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi
-600\tcrm1200.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmb
-x12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmitt10.pfb
-><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Pro
-gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Fil
-es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmsltt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
-1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
-/amsfonts/cm/cmtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfont
-s/cm/cmtt12.pfb>
-Output written on ywu67HW3.pdf (7 pages, 165847 bytes).
+ 56i,8n,55p,414b,1751s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\wx\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\tcs
+t1200.pk> <C:\Users\wx\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi
+600\tctt1000.pk> <C:\Users\wx\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen
+\ec\dpi600\tcrm1200.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmit
+t10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Prog
+ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmsltt10.pfb><C:/Program Files/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmtt10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmtt12.pfb>
+Output written on ywu67HW3.pdf (10 pages, 689096 bytes).
 PDF statistics:
- 192 PDF objects out of 1000 (max. 8388607)
- 83 named destinations out of 1000 (max. 500000)
- 22 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 262 PDF objects out of 1000 (max. 8388607)
+ 120 named destinations out of 1000 (max. 500000)
+ 32 words of extra memory for PDF output out of 10000 (max. 10000000)
 

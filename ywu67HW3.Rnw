@@ -121,7 +121,6 @@ R CMD pdflatex yourfilename.tex
         \begin{itemize}
             \item Use 
 \begin{lstlisting}
-<<echo=false, results=hide, fig=true>>=
 #Your R codes goes here
 library(Matrix)
 A=matrix(c(1,2,3,2,3,4,3,4,5,4,5,6),nrow=4,byrow=TRUE)
@@ -138,7 +137,6 @@ title(ylab="Y")
 box()
 lines(Avec,type="b",cex=0.6,pch=21,col='red')
 lines(Bvec,type="b",cex=0.6,pch=17,col='Blue')
-@
 \end{lstlisting}
 
 
@@ -179,7 +177,7 @@ points(xydataB,cex=,pch=,cex=,color='')
             \item computations need to be done before using them in the text
                 using \verb+\Sexpr{}+ or concurrently
 \begin{lstlisting}
-<<echo=false,result=verbatim,fig=false>>=
+<<echo=TRUE,result=verbatim,fig=false>>=
 A = matrix(c(1,0,0,1),nrow=2,byrow=TRUE)
 retval = det(A)
 @
@@ -283,9 +281,9 @@ image(M,col=gray.colors(k))
     \centering
 <<echo=true,result=verbatim,fig=true,width=5,height=5>>=
 tinyK = 1
-#smallK = 
-#mediumK = 
-#largeK = 
+#smallK = 5
+#mediumK = 10
+#largeK = 20
 #Your R codes go here
 @
 \caption{<YOUR PERFORMANCE EVALUATION> on $\Sexpr{tinyK}$}
@@ -293,6 +291,39 @@ tinyK = 1
 \end{figure}
 \end{lstlisting}
                  \end{itemize}
+<<echo=true,result=verbatim,fig=true,width=5,height=5>>=
+tinyK = 1
+#smallK = 5
+#mediumK = 10
+#largeK = 20
+load('matlabclown.RData')
+image(X) # omit this in your Sweave code
+svdX = svd(X)
+U = svdX$u
+S = diag(svdX$d)
+V = svdX$v
+k = tinyK 
+M = U[,1:k,drop=FALSE] %*% S[1:k,1:k,drop=FALSE] %*% t(V[,1:k,drop=FALSE])
+image(M) # omit this in your Sweave code
+image(M,col=gray.colors(k))
+@
+Test of small
+<<echo=true,result=verbatim,fig=true,width=5,height=5>>=
+tinyK = 1
+#smallK = 5
+#mediumK = 10
+#largeK = 20
+load('matlabclown.RData')
+image(X) # omit this in your Sweave code
+svdX = svd(X)
+U = svdX$u
+S = diag(svdX$d)
+V = svdX$v
+k = tinyK 
+M = U[,1:k,drop=FALSE] %*% S[1:k,1:k,drop=FALSE] %*% t(V[,1:k,drop=FALSE])
+image(M) # omit this in your Sweave code
+image(M,col=gray.colors(k))
+@
          \end{itemize}
     \item[(b)] 
         \begin{itemize}
@@ -365,8 +396,30 @@ tinyK = 1
 \paragraph{Ex 4.3}
 \begin{itemize}
     \item \verb+[COMMIT]+ list your R code using \verb+lstlisting+ 
+    \begin{lstlisting}
+    require(MVA);data(gardenflowers)
+    mds<-cmdscale(gardenflowers,k=17,eig=T)
+    mds$eig
+    #there are negative numbers in eigenvalues
+    cumsum(abs(mds$eig))/sum(abs(mds$eig))
+    cumsum((mds$eig)^2)/sum((mds$eig)^2)
+    x<-mds$points[,1]
+    y<-mds$points[,2]
+    co<-cbind(x,y)
+    plot(co,xlab="Coordinate1",ylab="Coordinate2",xlim=range(x)*1.2  ,type='n')
+    text(co,rownames(co),cex=0.7)
+    \end{lstlisting}
     \item \verb+[COMMIT]+ load the data
         (\verb+require(MVA);data(gardenflowers)+) and compute using R/Sweave
+<<echo=TRUE,results=verbatim,fig=FALSE>>=
+    require(MVA);data(gardenflowers)
+    mds<-cmdscale(gardenflowers,k=17,eig=T)
+    mds$eig
+    #there are negative numbers in eigenvalues
+    cumsum(abs(mds$eig))/sum(abs(mds$eig))
+    cumsum((mds$eig)^2)/sum((mds$eig)^2)
+@
+
     \item \verb+[COMMIT]+ include a plot of (relative) positions using R/Sweave
     \item \verb+[COMMIT]+ allocate at least a quarter page of \emph{text} explaining the result
 \end{itemize}

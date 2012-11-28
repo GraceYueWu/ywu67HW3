@@ -122,11 +122,26 @@ R CMD pdflatex yourfilename.tex
         \begin{itemize}
             \item Use 
 \begin{lstlisting}
-\includegraphics{ywu67HW3-001}
+#Your R codes goes here
+library(Matrix)
+A=matrix(c(1,2,3,2,3,4,3,4,5,4,5,6),nrow=4,byrow=TRUE)
+B=matrix(c(1,2,3,2,4,6,3,6,9,4,8,12),nrow=4,byrow=TRUE)
+Avec<-cbind(A[,1],A[,2])
+Bvec<-cbind(B[,1],B[,2])
+plot.new()
+plot.window(xlim=c(0,6),ylim=c(0,10))
+axis(1)
+axis(2)
+title(main="")
+title(xlab="X")
+title(ylab="Y")
+box()
+lines(Avec,type="b",cex=0.6,pch=21,col='red')
+lines(Bvec,type="b",cex=0.6,pch=17,col='Blue')
 \end{lstlisting}
 
 
-\includegraphics{ywu67HW3-002}
+\includegraphics{ywu67HW3-001}
 
             \item Make sure to label the horizontal axis, the vertical axis
                 and give the main title, and give different color for $A$ and
@@ -147,6 +162,12 @@ points(xydataB,cex=,pch=,cex=,color='')
             \item computations need to be done before using them in the text
                 using \verb++ or concurrently
 \begin{lstlisting}
+\begin{Schunk}
+\begin{Sinput}
+> A = matrix(c(1,0,0,1),nrow=2,byrow=TRUE)
+> retval = det(A)
+\end{Sinput}
+\end{Schunk}
 The determinant is 1 or equivalently 1.
 \end{lstlisting}
         \end{itemize}
@@ -306,18 +327,57 @@ image(M,col=gray.colors(k))
 \begin{Schunk}
 \begin{Sinput}
 > tinyK = 1
-> #smallK = 
-> #mediumK = 
-> #largeK = 
+> #smallK = 5
+> #mediumK = 10
+> #largeK = 20
 > #Your R codes go here
 \end{Sinput}
 \end{Schunk}
-\includegraphics{ywu67HW3-009}
+\includegraphics{ywu67HW3-008}
 \caption{<YOUR PERFORMANCE EVALUATION> on $1$}
     \label{fig:matlabclownKaNumber}
 \end{figure}
 \end{lstlisting}
                  \end{itemize}
+\begin{Schunk}
+\begin{Sinput}
+> tinyK = 1
+> #smallK = 5
+> #mediumK = 10
+> #largeK = 20
+> load('matlabclown.RData')
+> image(X) # omit this in your Sweave code
+> svdX = svd(X)
+> U = svdX$u
+> S = diag(svdX$d)
+> V = svdX$v
+> k = tinyK 
+> M = U[,1:k,drop=FALSE] %*% S[1:k,1:k,drop=FALSE] %*% t(V[,1:k,drop=FALSE])
+> image(M) # omit this in your Sweave code
+> image(M,col=gray.colors(k))
+\end{Sinput}
+\end{Schunk}
+\includegraphics{ywu67HW3-009}
+Test of small
+\begin{Schunk}
+\begin{Sinput}
+> tinyK = 1
+> #smallK = 5
+> #mediumK = 10
+> #largeK = 20
+> load('matlabclown.RData')
+> image(X) # omit this in your Sweave code
+> svdX = svd(X)
+> U = svdX$u
+> S = diag(svdX$d)
+> V = svdX$v
+> k = tinyK 
+> M = U[,1:k,drop=FALSE] %*% S[1:k,1:k,drop=FALSE] %*% t(V[,1:k,drop=FALSE])
+> image(M) # omit this in your Sweave code
+> image(M,col=gray.colors(k))
+\end{Sinput}
+\end{Schunk}
+\includegraphics{ywu67HW3-010}
          \end{itemize}
     \item[(b)] 
         \begin{itemize}
@@ -387,8 +447,52 @@ image(M,col=gray.colors(k))
 \paragraph{Ex 4.3}
 \begin{itemize}
     \item \verb+[COMMIT]+ list your R code using \verb+lstlisting+ 
+    \begin{lstlisting}
+    require(MVA);data(gardenflowers)
+    mds<-cmdscale(gardenflowers,k=17,eig=T)
+    mds$eig
+    #there are negative numbers in eigenvalues
+    cumsum(abs(mds$eig))/sum(abs(mds$eig))
+    cumsum((mds$eig)^2)/sum((mds$eig)^2)
+    x<-mds$points[,1]
+    y<-mds$points[,2]
+    co<-cbind(x,y)
+    plot(co,xlab="Coordinate1",ylab="Coordinate2",xlim=range(x)*1.2  ,type='n')
+    text(co,rownames(co),cex=0.7)
+    \end{lstlisting}
     \item \verb+[COMMIT]+ load the data
         (\verb+require(MVA);data(gardenflowers)+) and compute using R/Sweave
+\begin{Schunk}
+\begin{Sinput}
+>     require(MVA);data(gardenflowers)
+>     mds<-cmdscale(gardenflowers,k=17,eig=T)
+>     mds$eig
+\end{Sinput}
+\begin{Soutput}
+ [1]  1.173085e+00  8.944353e-01  5.732009e-01  4.843006e-01  2.638516e-01
+ [6]  2.298165e-01  8.383417e-02  6.645861e-02  2.984017e-02 -8.326673e-17
+[11] -2.147959e-02 -4.094094e-02 -4.366468e-02 -8.867401e-02 -1.045334e-01
+[16] -1.275889e-01 -1.714295e-01 -2.045124e-01
+\end{Soutput}
+\begin{Sinput}
+>     #there are negative numbers in eigenvalues
+>     cumsum(abs(mds$eig))/sum(abs(mds$eig))
+\end{Sinput}
+\begin{Soutput}
+ [1] 0.2549273 0.4493002 0.5738645 0.6791096 0.7364481 0.7863903 0.8046086
+ [8] 0.8190510 0.8255356 0.8255356 0.8302034 0.8391005 0.8485894 0.8678594
+[15] 0.8905760 0.9183028 0.9555567 1.0000000
+\end{Soutput}
+\begin{Sinput}
+>     cumsum((mds$eig)^2)/sum((mds$eig)^2)
+\end{Sinput}
+\begin{Soutput}
+ [1] 0.4611160 0.7291863 0.8392805 0.9178730 0.9412006 0.9588982 0.9612532
+ [8] 0.9627331 0.9630315 0.9630315 0.9631861 0.9637478 0.9643866 0.9670214
+[15] 0.9706829 0.9761377 0.9859851 1.0000000
+\end{Soutput}
+\end{Schunk}
+
     \item \verb+[COMMIT]+ include a plot of (relative) positions using R/Sweave
     \item \verb+[COMMIT]+ allocate at least a quarter page of \emph{text} explaining the result
 \end{itemize}
