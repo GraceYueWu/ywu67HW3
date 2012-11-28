@@ -144,7 +144,6 @@ lines(Bvec,type="b",cex=0.6,pch=17,col='Blue')
 
 <<echo=false, results=hide, fig=true>>=
 #Your R codes goes here
-library(Matrix)
 A=matrix(c(1,2,3,2,3,4,3,4,5,4,5,6),nrow=4,byrow=TRUE)
 B=matrix(c(1,2,3,2,4,6,3,6,9,4,8,12),nrow=4,byrow=TRUE)
 Avec<-cbind(A[,1],A[,2])
@@ -187,13 +186,22 @@ retval = det(A)
 The determinant is \Sexpr{det(A)} or equivalently \Sexpr{retval}.
 \end{lstlisting}
         \end{itemize}
+        
+<<echo=false,result=verbatim,fig=false>>=     
+A=matrix(c(1,2,3,2,3,4,3,4,5,4,5,6),nrow=4,byrow=TRUE)
+B=matrix(c(1,2,3,2,4,6,3,6,9,4,8,12),nrow=4,byrow=TRUE)        
+rank_a<-qr(A)$rank
+rank_b<-qr(B)$rank
+@
+The determinant is \Sexpr{rank_a} or equivalently \Sexpr{qr(A)$rank}.
+
     \item[(c)] \verb+[COMMIT]+   directly use the code and output from R/Sweave, but make sure
         to explain your answers
 \begin{lstlisting}
-<<echo=true,result=verbatim,fig=false>>=
-#Your R code goes here
-@
+
 \end{lstlisting}
+
+
 \end{itemize}
 \paragraph{Ex 7.24}
 \begin{itemize}
