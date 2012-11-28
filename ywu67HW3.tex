@@ -10,7 +10,7 @@
 \topmargin=-1in
 \headheight=0in
 \headsep=.5in
-\hoffset  -.85in
+\hoffset=-.85in
 
 
 \lstset{
@@ -124,12 +124,18 @@ R CMD pdflatex yourfilename.tex
 \begin{lstlisting}
 \includegraphics{ywu67HW3-001}
 \end{lstlisting}
+
+
+\includegraphics{ywu67HW3-002}
+
             \item Make sure to label the horizontal axis, the vertical axis
                 and give the main title, and give different color for $A$ and
                 $B$ e.g., by filling out the space
                 between the quotation marks, and choose a different symbol for
                 $A$ and $B$ by specifying a number for \verb+cex+ and
                 \verb+pch+
+
+
 \begin{lstlisting}
 plot(xydataA,xlab='',ylab='',main='',color='',cex=,pch=)
 points(xydataB,cex=,pch=,cex=,color='')
@@ -215,7 +221,7 @@ image(M,col=gray.colors(k))
 > #Your R codes go here
 \end{Sinput}
 \end{Schunk}
-\includegraphics{ywu67HW3-006}
+\includegraphics{ywu67HW3-007}
 \caption{<YOUR PERFORMANCE EVALUATION> on $1$}
     \label{fig:matlabclownKaNumber}
 \end{figure}

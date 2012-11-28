@@ -10,7 +10,7 @@
 \topmargin=-1in
 \headheight=0in
 \headsep=.5in
-\hoffset  -.85in
+\hoffset=-.85in
 
 
 \lstset{
@@ -123,7 +123,6 @@ R CMD pdflatex yourfilename.tex
 \begin{lstlisting}
 <<echo=false, results=hide, fig=true>>=
 #Your R codes goes here
-@
 library(Matrix)
 A=matrix(c(1,2,3,2,3,4,3,4,5,4,5,6),nrow=4,byrow=TRUE)
 B=matrix(c(1,2,3,2,4,6,3,6,9,4,8,12),nrow=4,byrow=TRUE)
@@ -139,13 +138,37 @@ title(ylab="Y")
 box()
 lines(Avec,type="b",cex=0.6,pch=21,col='red')
 lines(Bvec,type="b",cex=0.6,pch=17,col='Blue')
+@
 \end{lstlisting}
+
+
+<<echo=false, results=hide, fig=true>>=
+#Your R codes goes here
+library(Matrix)
+A=matrix(c(1,2,3,2,3,4,3,4,5,4,5,6),nrow=4,byrow=TRUE)
+B=matrix(c(1,2,3,2,4,6,3,6,9,4,8,12),nrow=4,byrow=TRUE)
+Avec<-cbind(A[,1],A[,2])
+Bvec<-cbind(B[,1],B[,2])
+plot.new()
+plot.window(xlim=c(0,6),ylim=c(0,10))
+axis(1)
+axis(2)
+title(main="")
+title(xlab="X")
+title(ylab="Y")
+box()
+lines(Avec,type="b",cex=0.6,pch=21,col='red')
+lines(Bvec,type="b",cex=0.6,pch=17,col='Blue')
+@
+
             \item Make sure to label the horizontal axis, the vertical axis
                 and give the main title, and give different color for $A$ and
                 $B$ e.g., by filling out the space
                 between the quotation marks, and choose a different symbol for
                 $A$ and $B$ by specifying a number for \verb+cex+ and
                 \verb+pch+
+
+
 \begin{lstlisting}
 plot(xydataA,xlab='',ylab='',main='',color='',cex=,pch=)
 points(xydataB,cex=,pch=,cex=,color='')
@@ -164,14 +187,6 @@ retval = det(A)
 The determinant is \Sexpr{det(A)} or equivalently \Sexpr{retval}.
 \end{lstlisting}
         \end{itemize}
-\begin{lstlisting}
-<<echo=false,result=verbatim,fig=false>>=
-@
-library(Matrix)
-rankMatrix(A)[1]
-rankMatrix(B)[1]
-The rank .
-\end{lstlisting}
     \item[(c)] \verb+[COMMIT]+   directly use the code and output from R/Sweave, but make sure
         to explain your answers
 \begin{lstlisting}
