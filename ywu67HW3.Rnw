@@ -197,9 +197,22 @@ The determinant is \Sexpr{rank_a} or equivalently \Sexpr{qr(A)$rank}.
 
     \item[(c)] \verb+[COMMIT]+   directly use the code and output from R/Sweave, but make sure
         to explain your answers
-\begin{lstlisting}
+<<>>=
+#Combination of A
+c<-c(0,0,0)
+z<-as.matrix(c)
+a1<-cbind(z[1,],z[1,],A[,1])
+a1
+A1<-cbind(A[,1],A[,2],A[,3]+A[,1])
+A1
+a2<-cbind(z[1,],z[1,],-2*A[,2])
+a2
+A2<-cbind(A[,1],A[,2],A[,3]+A[,1]-2*A[,2])
+A2
+#Combination of B
+@
 
-\end{lstlisting}
+
 
 
 \end{itemize}

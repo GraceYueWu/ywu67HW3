@@ -17,6 +17,8 @@ lines(Bvec,type="b",cex=0.6,pch=17,col='Blue')
 library(Matrix)
 rankMatrix(A)[1]
 rankMatrix(B)[1]
+qr(A)
+qr(A)$rank
 
 library(HSAUR)
 A.pca<-prcomp(A,retx=TRUE,center=TRUE,scale.=TRUE)

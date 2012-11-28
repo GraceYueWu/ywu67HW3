@@ -155,9 +155,60 @@ The determinant is 2 or equivalently 2.
 
     \item[(c)] \verb+[COMMIT]+   directly use the code and output from R/Sweave, but make sure
         to explain your answers
-\begin{lstlisting}
+\begin{Schunk}
+\begin{Sinput}
+> #Combination of A
+> c<-c(0,0,0)
+> z<-as.matrix(c)
+> a1<-cbind(z[1,],z[1,],A[,1])
+> a1
+\end{Sinput}
+\begin{Soutput}
+     [,1] [,2] [,3]
+[1,]    0    0    1
+[2,]    0    0    2
+[3,]    0    0    3
+[4,]    0    0    4
+\end{Soutput}
+\begin{Sinput}
+> A1<-cbind(A[,1],A[,2],A[,3]+A[,1])
+> A1
+\end{Sinput}
+\begin{Soutput}
+     [,1] [,2] [,3]
+[1,]    1    2    4
+[2,]    2    3    6
+[3,]    3    4    8
+[4,]    4    5   10
+\end{Soutput}
+\begin{Sinput}
+> a2<-cbind(z[1,],z[1,],-2*A[,2])
+> a2
+\end{Sinput}
+\begin{Soutput}
+     [,1] [,2] [,3]
+[1,]    0    0   -4
+[2,]    0    0   -6
+[3,]    0    0   -8
+[4,]    0    0  -10
+\end{Soutput}
+\begin{Sinput}
+> A2<-cbind(A[,1],A[,2],A[,3]+A[,1]-2*A[,2])
+> A2
+\end{Sinput}
+\begin{Soutput}
+     [,1] [,2] [,3]
+[1,]    1    2    0
+[2,]    2    3    0
+[3,]    3    4    0
+[4,]    4    5    0
+\end{Soutput}
+\begin{Sinput}
+> #Combination of B
+\end{Sinput}
+\end{Schunk}
 
-\end{lstlisting}
+
 
 
 \end{itemize}
@@ -222,7 +273,7 @@ image(M,col=gray.colors(k))
 > #Your R codes go here
 \end{Sinput}
 \end{Schunk}
-\includegraphics{ywu67HW3-007}
+\includegraphics{ywu67HW3-008}
 \caption{<YOUR PERFORMANCE EVALUATION> on $1$}
     \label{fig:matlabclownKaNumber}
 \end{figure}
