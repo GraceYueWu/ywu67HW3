@@ -261,7 +261,7 @@ dist(A)
     \item \verb+[COMMIT]+ make sure to explain your computation, e.g., compare the two
         computations
 \end{itemize}
-
+The two method get the same result.Using equation generates the Euclidean distances and mathes the built in function.
 
 \paragraph{Ex 7.30}
 Omit (c), (d) and (e). 
@@ -304,38 +304,44 @@ tinyK = 1
 \end{lstlisting}
                  \end{itemize}
 <<echo=true,result=verbatim,fig=true,width=5,height=5>>=
-tinyK = 1
-#smallK = 5
-#mediumK = 10
-#largeK = 20
+#Test of small K.
+#smallK = 10
 load('matlabclown.RData')
-image(X) # omit this in your Sweave code
 svdX = svd(X)
 U = svdX$u
 S = diag(svdX$d)
 V = svdX$v
-k = tinyK 
+k = 10 
 M = U[,1:k,drop=FALSE] %*% S[1:k,1:k,drop=FALSE] %*% t(V[,1:k,drop=FALSE])
-image(M) # omit this in your Sweave code
 image(M,col=gray.colors(k))
 @
-Test of small
+\\
 <<echo=true,result=verbatim,fig=true,width=5,height=5>>=
-tinyK = 1
-#smallK = 5
-#mediumK = 10
-#largeK = 20
+#Test of middle K
+#mediumK = 50
 load('matlabclown.RData')
-image(X) # omit this in your Sweave code
 svdX = svd(X)
 U = svdX$u
 S = diag(svdX$d)
 V = svdX$v
-k = tinyK 
+k = 50 
 M = U[,1:k,drop=FALSE] %*% S[1:k,1:k,drop=FALSE] %*% t(V[,1:k,drop=FALSE])
-image(M) # omit this in your Sweave code
 image(M,col=gray.colors(k))
 @
+\\
+<<echo=true,result=verbatim,fig=true,width=5,height=5>>=
+#Test of large K
+#largeK = 100
+load('matlabclown.RData')
+svdX = svd(X)
+U = svdX$u
+S = diag(svdX$d)
+V = svdX$v
+k = 100 
+M = U[,1:k,drop=FALSE] %*% S[1:k,1:k,drop=FALSE] %*% t(V[,1:k,drop=FALSE])
+image(M,col=gray.colors(k))
+@
+
          \end{itemize}
     \item[(b)] 
         \begin{itemize}

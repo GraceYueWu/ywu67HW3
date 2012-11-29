@@ -341,7 +341,7 @@ The coefficient of linear combination for Matrix B is -1:-1:1, meaning that -1*c
     \item \verb+[COMMIT]+ make sure to explain your computation, e.g., compare the two
         computations
 \end{itemize}
-
+The two method get the same result.Using equation generates the Euclidean distances and mathes the built in function.
 
 \paragraph{Ex 7.30}
 Omit (c), (d) and (e). 
@@ -388,43 +388,52 @@ image(M,col=gray.colors(k))
                  \end{itemize}
 \begin{Schunk}
 \begin{Sinput}
-> tinyK = 1
-> #smallK = 5
-> #mediumK = 10
-> #largeK = 20
+> #Test of small K.
+> #smallK = 10
 > load('matlabclown.RData')
-> image(X) # omit this in your Sweave code
 > svdX = svd(X)
 > U = svdX$u
 > S = diag(svdX$d)
 > V = svdX$v
-> k = tinyK 
+> k = 10 
 > M = U[,1:k,drop=FALSE] %*% S[1:k,1:k,drop=FALSE] %*% t(V[,1:k,drop=FALSE])
-> image(M) # omit this in your Sweave code
 > image(M,col=gray.colors(k))
 \end{Sinput}
 \end{Schunk}
 \includegraphics{ywu67HW3-009}
-Test of small
+\\
 \begin{Schunk}
 \begin{Sinput}
-> tinyK = 1
-> #smallK = 5
-> #mediumK = 10
-> #largeK = 20
+> #Test of middle K
+> #mediumK = 50
 > load('matlabclown.RData')
-> image(X) # omit this in your Sweave code
 > svdX = svd(X)
 > U = svdX$u
 > S = diag(svdX$d)
 > V = svdX$v
-> k = tinyK 
+> k = 50 
 > M = U[,1:k,drop=FALSE] %*% S[1:k,1:k,drop=FALSE] %*% t(V[,1:k,drop=FALSE])
-> image(M) # omit this in your Sweave code
 > image(M,col=gray.colors(k))
 \end{Sinput}
 \end{Schunk}
 \includegraphics{ywu67HW3-010}
+\\
+\begin{Schunk}
+\begin{Sinput}
+> #Test of large K
+> #largeK = 100
+> load('matlabclown.RData')
+> svdX = svd(X)
+> U = svdX$u
+> S = diag(svdX$d)
+> V = svdX$v
+> k = 100 
+> M = U[,1:k,drop=FALSE] %*% S[1:k,1:k,drop=FALSE] %*% t(V[,1:k,drop=FALSE])
+> image(M,col=gray.colors(k))
+\end{Sinput}
+\end{Schunk}
+\includegraphics{ywu67HW3-011}
+
          \end{itemize}
     \item[(b)] 
         \begin{itemize}
@@ -543,7 +552,7 @@ Test of small
     \item \verb+[COMMIT]+ include a plot of (relative) positions using R/Sweave
     \begin{figure}[h]
       \centering
-\includegraphics{ywu67HW3-013}
+\includegraphics{ywu67HW3-014}
     \end{figure}
 \pagebreak
     \item \verb+[COMMIT]+ allocate at least a quarter page of \emph{text} explaining the result
