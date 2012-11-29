@@ -177,7 +177,7 @@ points(xydataB,cex=,pch=,cex=,color='')
             \item computations need to be done before using them in the text
                 using \verb+\Sexpr{}+ or concurrently
 \begin{lstlisting}
-<<echo=TRUE,result=verbatim,fig=false>>=
+<<echo=FALSE,result=verbatim,fig=false>>=
 A = matrix(c(1,0,0,1),nrow=2,byrow=TRUE)
 retval = det(A)
 @
@@ -185,13 +185,17 @@ The determinant is \Sexpr{det(A)} or equivalently \Sexpr{retval}.
 \end{lstlisting}
         \end{itemize}
         
-<<echo=false,result=verbatim,fig=false>>=     
+<<echo=TRUE,result=verbatim,fig=false>>=     
 A=matrix(c(1,2,3,2,3,4,3,4,5,4,5,6),nrow=4,byrow=TRUE)
 B=matrix(c(1,2,3,2,4,6,3,6,9,4,8,12),nrow=4,byrow=TRUE)        
 rank_a<-qr(A)$rank
 rank_b<-qr(B)$rank
+rank_a
+rank_b
 @
-The determinant is \Sexpr{rank_a} or equivalently \Sexpr{qr(A)$rank}.
+The rank of A is \Sexpr{rank_a} or equivalently \Sexpr{qr(A)$rank}.
+The rank of B is \Sexpr{rank_b} or equivalently \Sexpr{qr(B)$rank}.\\
+The reason why rank of A being 2 instead of 1 is that only one of the column can be reduced. Even though, column 1 can be expressed by sum of a constant vector plus either column2 or column3, it does not fit the defination of linear dependent. 
 
     \item[(c)] \verb+[COMMIT]+   directly use the code and output from R/Sweave, but make sure
         to explain your answers
@@ -421,6 +425,17 @@ image(M,col=gray.colors(k))
 @
 
     \item \verb+[COMMIT]+ include a plot of (relative) positions using R/Sweave
+    \begin{figure}[h]
+      \centering
+<<echo=FALSE,result=verbatim,fig=TRUE,width=5,height=5>>=
+x<-mds$points[,1]
+y<-mds$points[,2]
+co<-cbind(x,y)
+plot(co,xlab="Coordinate1",ylab="Coordinate2",xlim=range(x)*1.2,type='n')
+text(co,rownames(co),cex=0.7)
+@
+    \end{figure}
+\pagebreak
     \item \verb+[COMMIT]+ allocate at least a quarter page of \emph{text} explaining the result
 \end{itemize}
 

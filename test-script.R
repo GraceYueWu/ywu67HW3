@@ -63,3 +63,8 @@ mds$eig
 #there are negative numbers in eigenvalues
 cumsum(abs(mds$eig))/sum(abs(mds$eig))
 cumsum((mds$eig)^2)/sum((mds$eig)^2)
+x<-mds$points[,1]
+y<-mds$points[,2]
+co<-cbind(x,y)
+plot(co,xlab="Coordinate1",ylab="Coordinate2",xlim=range(x)*1.2,type='n')
+text(co,rownames(co),cex=0.7)
