@@ -439,12 +439,46 @@ image(M,col=gray.colors(k))
         \begin{itemize}
             \item \verb+[COMMIT]+ code up all your computation using R/Sweave
                 before starting to type your explanation
-\begin{lstlisting}
-\end{lstlisting}
+\begin{Schunk}
+\begin{Sinput}
+> smallK = 10 
+> mediumK = 50 
+> largeK = 100
+> load('matlabclown.RData')
+> dimX= dim(X)
+> k=smallK
+> Compsmall=((k*(dimX[1]+dimX[2]+1)))/(dimX[1]*dimX[2])
+> Compsmall
+\end{Sinput}
+\begin{Soutput}
+[1] 0.08140625
+\end{Soutput}
+\begin{Sinput}
+> k=mediumK
+> Compmiddle=((k*(dimX[1]+dimX[2]+1)))/(dimX[1]*dimX[2])
+> Compmiddle
+\end{Sinput}
+\begin{Soutput}
+[1] 0.4070313
+\end{Soutput}
+\begin{Sinput}
+> k=largeK
+> Complarge=((k*(dimX[1]+dimX[2]+1)))/(dimX[1]*dimX[2])
+> Complarge
+\end{Sinput}
+\begin{Soutput}
+[1] 0.8140625
+\end{Soutput}
+\end{Schunk}
+
             \item \verb+[COMMIT]+ write your explanation referring to the
                 numbers computed in the previous step, using
                 \verb++
         \end{itemize}
+Compute the compression ratio by divide the sum of dimension after compression by the sum of dimension before compression.
+So when k equals to 10, the ratio is 0.08140625.\\
+When k equals to 50, the ratio is 0.40703125.\\
+When k equals to 100, the ratio is 0.8140625.\\
 \end{itemize}
 
 \vskip0.25in
@@ -472,11 +506,115 @@ image(M,col=gray.colors(k))
 \end{minipage}
 \end{center}
     \item \verb+[COMMIT]+ list your R/Sweave codes using \verb+lstlisting+
+\begin{lstlisting}
+a <- c()
+for(i in 1:51) {
+  for(j in 1:51){
+  if(i==j)
+    {
+      a=append(a,9)
+    } 
+  else if((abs(i-j)>=1) && (abs(i-j)<=3)){
+      a=append(a,8)
+    } 
+  else if((abs(i-j)>=4)&&(abs(i-j)<=6)){
+      a=append(a,7)  
+    } 
+  else if((abs(i-j)>=7)&&(abs(i-j)<=9)){
+      a=append(a,6)
+    } 
+  else if((abs(i-j)>=10)&&(abs(i-j)<=12)){
+      a=append(a,5)
+    } 
+  else if((abs(i-j)>=13)&&(abs(i-j)<=15)){
+      a=append(a,4)
+    } 
+  else if((abs(i-j)>=16)&&(abs(i-j)<=18)){
+      a=append(a,3)
+    } 
+  else if((abs(i-j)>=19)&&(abs(i-j)<=21)){
+      a=append(a,2)
+    } 
+  else if((abs(i-j)>=22)&&(abs(i-j)<=24)){
+      a=append(a,1)
+    } 
+  else if((abs(i-j)>=25)){
+      a=append(a,0)
+    } 
+  }
+}
+q=matrix(a,nrow=51)
+for(i in 1:51){
+  for(j in 1:51){
+    if(i==1 && j==1){
+      diff=sqrt(q[i,i]+q[j,j]+-2*q[i,j])
+    } else{
+      diff = append(diff, sqrt(q[i,i]+q[j,j]+-2*q[i,j]))
+    }
+  }
+}
+mdiff = matrix(diff, nrow = 51)
+plot(cmdscale(mdiff))
+\end{lstlisting}
     \item \verb+[COMMIT]+ use the R/Sweave codes to compute
+\begin{Schunk}
+\begin{Sinput}
+> a <- c()
+> for(i in 1:51) {
++   for(j in 1:51){
++   if(i==j)
++     {
++       a=append(a,9)
++     } 
++   else if((abs(i-j)>=1) && (abs(i-j)<=3)){
++       a=append(a,8)
++     } 
++   else if((abs(i-j)>=4)&&(abs(i-j)<=6)){
++       a=append(a,7)  
++     } 
++   else if((abs(i-j)>=7)&&(abs(i-j)<=9)){
++       a=append(a,6)
++     } 
++   else if((abs(i-j)>=10)&&(abs(i-j)<=12)){
++       a=append(a,5)
++     } 
++   else if((abs(i-j)>=13)&&(abs(i-j)<=15)){
++       a=append(a,4)
++     } 
++   else if((abs(i-j)>=16)&&(abs(i-j)<=18)){
++       a=append(a,3)
++     } 
++   else if((abs(i-j)>=19)&&(abs(i-j)<=21)){
++       a=append(a,2)
++     } 
++   else if((abs(i-j)>=22)&&(abs(i-j)<=24)){
++       a=append(a,1)
++     } 
++   else if((abs(i-j)>=25)){
++       a=append(a,0)
++     } 
++   }
++ }
+> q=matrix(a,nrow=51)
+> for(i in 1:51){
++   for(j in 1:51){
++     if(i==1 && j==1){
++       diff=sqrt(q[i,i]+q[j,j]+-2*q[i,j])
++     } else{
++       diff = append(diff, sqrt(q[i,i]+q[j,j]+-2*q[i,j]))
++     }
++   }
++ }
+> mdiff = matrix(diff, nrow = 51)
+> plot(cmdscale(mdiff))
+\end{Sinput}
+\end{Schunk}
+\includegraphics{ywu67HW3-013}
     \item \verb+[COMMIT]+ explain your computed numerical values 
     \item make sure to refer to your R code listing via \verb+\ref+ and to the
         computed values using \verb+\Sexpr+
     \item refer to  \cite{tikzManual2012-11-04} if necessary
+    The 
 \end{itemize}
 
 \begin{figure}[h!]
@@ -552,11 +690,37 @@ image(M,col=gray.colors(k))
     \item \verb+[COMMIT]+ include a plot of (relative) positions using R/Sweave
     \begin{figure}[h]
       \centering
-\includegraphics{ywu67HW3-014}
+\includegraphics{ywu67HW3-015}
     \end{figure}
 \pagebreak
     \item \verb+[COMMIT]+ allocate at least a quarter page of \emph{text} explaining the result
 \end{itemize}
+Among the 18 flowers, there are generally 4 goups are more similar to each other according to the plot.\\
+Firstly, 3 types of flowers below are close to each other in the plot, indicating more common propeties, they are:\\
+Scotch rose (Rosa pimpinella)\\
+Red rose (Rosa rugosa)\\
+Broom (Cytisus praecox).\\
+The second group which are also very similar to each others are:\\
+Camellia (Japonica)\\
+Fuchsia (Marinka)\\
+Begonia (Bertinii bolivienis).\\
+The third group contains 4 kinds of flowers sharing more common properties, they are:\\
+Dahlia (Tartini)\\               
+Geranium (Rubin)\\                
+Gladiolus (Flowersong)\\
+Tulip (Tulipa sylevstris)\\
+The last group is bigger, and relatively not as clustered as the previous 3 groups. There are also subgroups in the last group.All the flowers in the group are:\\
+Hydrangea (Hortensis)\\   
+Lily-of-the-valley (Convallaria)\\
+Heather (Erica carnea)\\
+Lily (lilium regale)\\
+Iris (Versicolor)\\
+Peony (Paeonia lactiflora)\\
+Forget-me-not (Myosotis sylvatica)\\
+Pink carnation (Dianthus).\\
+Among which Hydrangea (Hortensis) and Lily-of-the-valley (Convallaria) are more similar than others;\\
+Heather (Erica carnea), Lily (lilium regale) and Iris (Versicolor) are relatively more similar;\\
+Peony (Paeonia lactiflora), Forget-me-not (Myosotis sylvatica) and Pink carnation (Dianthus) are closer.\\
 
 \bibliographystyle{plain}
 \nocite{*}

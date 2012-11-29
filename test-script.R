@@ -55,6 +55,55 @@ image(M) # omit this in your Sweave code
 image(M,col=gray.colors(k))
 
 svd(X)
+##################Ex 4.1
+a <- c()
+for(i in 1:51) {
+  for(j in 1:51){
+    if(i==j)
+    {
+      a=append(a,9)
+    } 
+    else if((abs(i-j)>=1) && (abs(i-j)<=3)){
+      a=append(a,8)
+    } 
+    else if((abs(i-j)>=4)&&(abs(i-j)<=6)){
+      a=append(a,7)  
+    } 
+    else if((abs(i-j)>=7)&&(abs(i-j)<=9)){
+      a=append(a,6)
+    } 
+    else if((abs(i-j)>=10)&&(abs(i-j)<=12)){
+      a=append(a,5)
+    } 
+    else if((abs(i-j)>=13)&&(abs(i-j)<=15)){
+      a=append(a,4)
+    } 
+    else if((abs(i-j)>=16)&&(abs(i-j)<=18)){
+      a=append(a,3)
+    } 
+    else if((abs(i-j)>=19)&&(abs(i-j)<=21)){
+      a=append(a,2)
+    } 
+    else if((abs(i-j)>=22)&&(abs(i-j)<=24)){
+      a=append(a,1)
+    } 
+    else if((abs(i-j)>=25)){
+      a=append(a,0)
+    } 
+  }
+}
+q=matrix(a,nrow=51)
+for(i in 1:51){
+  for(j in 1:51){
+    if(i==1 && j==1){
+      diff=sqrt(q[i,i]+q[j,j]+-2*q[i,j])
+    } else{
+      diff = append(diff, sqrt(q[i,i]+q[j,j]+-2*q[i,j]))
+    }
+  }
+}
+mdiff = matrix(diff, nrow = 51)
+plot(cmdscale(mdiff))
 
 ##############Ex 4.3
 require(MVA);data(gardenflowers)
